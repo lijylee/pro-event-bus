@@ -2,7 +2,7 @@
   "name": "pro-event-bus",
   "version": "1.0.0",
   "description": "event,event-bus,event-center,event-control",
-  "main": "dist/pro-event-bus.js",
+  "private": true,
   "scripts": {
     "build": "node_modules/.bin/rollup --config"
   },
