@@ -8,6 +8,23 @@
       return obj && Object.keys(obj).length === 0 && obj.constructor === Object;
     }
 
+    function validateString(str) {
+      if (!str || typeof str !== 'string') {
+        throw new TypeError('Parameter is not a string');
+      }
+    }
+
+    function validateFunction(fn) {
+      if (!fn || typeof fn !== 'function') {
+        throw new TypeError('Parameter is not a function');
+      }
+    }
+
+    function validateParameters(type, cb) {
+      validateString(type);
+      validateFunction(cb);
+    }
+
     function EventBus() {
       this._listeners = Object.create(null);
     }
@@ -15,6 +32,8 @@
     EventBus.prototype = {
       constructor: EventBus,
       on: function on(type, cb) {
+        validateParameters(type, cb);
+
         if (this._listeners[type]) {
           this._listeners[type].push(cb);
         } else {
@@ -22,6 +41,8 @@
         }
       },
       once: function once(type, cb) {
+        validateParameters(type, cb);
+
         var handler = function handler() {
           for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
             args[_key] = arguments[_key];
@@ -35,6 +56,8 @@
         this.on(type, handler);
       },
       off: function off(type, cb) {
+        validateParameters(type, cb);
+
         if (this._listeners[type] && this._listeners[type].length) {
           this._listeners[type] = this._listeners[type].filter(function (handler) {
             return handler !== cb && handler.link !== cb;
@@ -61,6 +84,8 @@
         for (var _len2 = arguments.length, args = new Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1; _key2 < _len2; _key2++) {
           args[_key2 - 1] = arguments[_key2];
         }
+
+        validateString(type);
 
         if (this._listeners[type] && this._listeners[type].length) {
           this._listeners[type].forEach(function (handler) {
