@@ -6,12 +6,44 @@
  npm i pro-event-bus
 ```
 
-## on
+## node
 
-## once
+```javascript
+const EventBus = require('pro-event-bus')
 
-## off
+const eventBus = new EventBus()
 
-## offAll
+eventBus.on('test', () => {
+    console.log('test pro-event-bus');
+})
 
-## emit
+eventBus.once('once', () => {
+    console.log('test pro-event-bus-once');
+})
+
+eventBus.emit('test')
+eventBus.emit('test')
+eventBus.emit('once')
+eventBus.emit('once')
+
+eventBus.offAll()
+eventBus.emit('test')
+
+/* 
+    test pro-event-bus
+    test pro-event-bus     
+    test pro-event-bus-once
+*/
+```
+
+## API
+
+#### on
+
+#### once
+
+#### off
+
+#### offAll
+
+#### emit
