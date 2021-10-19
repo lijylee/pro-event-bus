@@ -1,6 +1,6 @@
 {
   "name": "pro-event-bus",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "event,event-bus,event-center,event-control",
   "main": "index.js",
   "scripts": {

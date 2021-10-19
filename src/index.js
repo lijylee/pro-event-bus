@@ -1,23 +1,4 @@
-function objectEmptyCheck(obj) {
-    return obj && Object.keys(obj).length === 0 && obj.constructor === Object
-}
-
-function validateString(str) {
-    if (!str || typeof str !== 'string') {
-        throw new TypeError('Parameter is not a string')
-    }
-}
-
-function validateFunction(fn) {
-    if (!fn || typeof fn !== 'function') {
-        throw new TypeError('Parameter is not a function')
-    }
-}
-
-function validateParameters(type, cb) {
-    validateString(type)
-    validateFunction(cb)
-}
+import { objectEmptyCheck, validateParameters, validateString } from './util';
 
 function EventBus() {
     this._listeners = Object.create(null)

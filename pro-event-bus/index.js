@@ -4,26 +4,23 @@
     (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.proEventBus = factory());
 })(this, (function () { 'use strict';
 
-    function objectEmptyCheck(obj) {
+    var objectEmptyCheck = function objectEmptyCheck(obj) {
       return obj && Object.keys(obj).length === 0 && obj.constructor === Object;
-    }
-
-    function validateString(str) {
+    };
+    var validateString = function validateString(str) {
       if (!str || typeof str !== 'string') {
         throw new TypeError('Parameter is not a string');
       }
-    }
-
-    function validateFunction(fn) {
+    };
+    var validateFunction = function validateFunction(fn) {
       if (!fn || typeof fn !== 'function') {
         throw new TypeError('Parameter is not a function');
       }
-    }
-
-    function validateParameters(type, cb) {
+    };
+    var validateParameters = function validateParameters(type, cb) {
       validateString(type);
       validateFunction(cb);
-    }
+    };
 
     function EventBus() {
       this._listeners = Object.create(null);
