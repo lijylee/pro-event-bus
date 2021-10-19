@@ -36,6 +36,36 @@ eventBus.emit('test')
 */
 ```
 
+## web
+
+```javascript
+<script src="./pro-event-bus/index.js"></script>
+    <script>
+        const eventBus = new proEventBus()
+
+        eventBus.on('test', () => {
+            console.log('test pro-event-bus');
+        })
+
+        eventBus.once('once', () => {
+            console.log('test pro-event-bus-once');
+        })
+
+        eventBus.emit('test')
+        eventBus.emit('test')
+        eventBus.emit('once')
+        eventBus.emit('once')
+
+        eventBus.offAll()
+        eventBus.emit('test')
+
+        /*
+            ② test pro-event-bus
+            test pro-event-bus-once
+        */
+    </script>
+```
+
 ## API
 
 #### on
