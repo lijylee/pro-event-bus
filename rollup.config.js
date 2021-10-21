@@ -6,7 +6,7 @@ export default {
   output: {
     file: 'pro-event-bus/index.js',
     format: 'umd',
-    name: 'proEventBus'
+    name: 'ProEventBus'
   },
   plugins: [
     resolve(),

@@ -9,9 +9,9 @@
 ## node
 
 ```javascript
-const EventBus = require('pro-event-bus')
+const ProEventBus = require('pro-event-bus')
 
-const eventBus = new EventBus()
+const eventBus = new ProEventBus()
 
 eventBus.on('test', () => {
     console.log('test pro-event-bus');
@@ -40,8 +40,9 @@ eventBus.emit('test')
 
 ```javascript
 <script src="./pro-event-bus/index.js"></script>
+// https://cdn.jsdelivr.net/npm/pro-event-bus@1.0.4/index.js
 <script>
-    const eventBus = new proEventBus()
+    const eventBus = new ProEventBus()
 
     eventBus.on('test', () => {
         console.log('test pro-event-bus');
