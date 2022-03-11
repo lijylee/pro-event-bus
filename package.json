@@ -1,8 +1,7 @@
 {
   "name": "pro-event-bus",
-  "version": "1.0.1",
+  "version": "1.0.5",
   "description": "event,event-bus,event-center,event-control",
-  "private": true,
   "scripts": {
     "build": "rollup --config"
   },
