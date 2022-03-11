@@ -4,8 +4,11 @@
   "description": "event,event-bus,event-center,event-control",
   "private": true,
   "scripts": {
-    "build": "node_modules/.bin/rollup --config"
+    "build": "rollup --config"
   },
+  "files": [
+    "pro-event-bus"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/lijylee/pro-event-bus"
@@ -19,10 +22,11 @@
   "author": "lijylee",
   "license": "MIT",
   "devDependencies": {
-    "@babel/core": "^7.15.5",
-    "@babel/preset-env": "^7.15.6",
-    "@rollup/plugin-babel": "^5.3.0",
-    "@rollup/plugin-node-resolve": "^13.0.5",
-    "rollup": "^2.58.0"
+    "@babel/core": "^7.17.5",
+    "@babel/preset-env": "^7.16.11",
+    "@rollup/plugin-babel": "^5.3.1",
+    "@rollup/plugin-node-resolve": "^13.1.3",
+    "rollup": "^2.70.0",
+    "rollup-plugin-uglify": "^6.0.4"
   }
 }
